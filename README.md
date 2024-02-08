@@ -96,7 +96,7 @@ for example::: To use any middleware  ```router.Use(middleware.Logger)```
 there are various way for sub routing... one of using Mount function
 
 ````router.Mount(pattern string, handler http.Handler)```` 
-Mount attaches another http.Handler or chi Router as a subrouter along a routing path. It's very useful to split up a large API as many independent routers and compose them as a single service using Mount. See _examples/.
+Mount() attaches another http.Handler or chi Router as a subrouter along a routing path. It's very useful to split up a large API as many independent routers and compose them as a single service using Mount. See _examples/.
 Note that Mount() simply sets a wildcard along the `pattern` that will continue routing at the `handler`, which in most cases is another chi.Router. As a result, if you define two Mount() routes on the exact same pattern the mount will panic.
 
 # References
