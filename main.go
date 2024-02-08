@@ -15,7 +15,7 @@ func main() {
 
 	router := chi.NewRouter()
 
-	//creating middlewares
+	//to use middlewares
 
 	router.Use(middleware.Logger)
 	router.Use(middleware.RequestID)
@@ -29,7 +29,7 @@ func main() {
 		w.Write([]byte("Hello World!"))
 	})
 
-	//starting server at 3000 port
+	//listening server at 3000 port
 
 	log.Fatal(http.ListenAndServe(":3000", router))
 
