@@ -9,6 +9,22 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 )
 
+func BookRoutes() chi.Router {
+	r := chi.NewRouter()
+
+	//http.HandlerFunc functions can be fired from here
+
+	//bookHandler.ListBooks ... etc are http.HandlerFunc functions
+
+	// r.Get("/", bookHandler.ListBooks)
+	// r.Post("/", bookHandler.CreateBook)
+	// r.Get("/{id}", bookHandler.GetBooks)
+	// r.Put("/{id}", bookHandler.UpdateBook)
+	// r.Delete("/{id}", bookHandler.DeleteBook)
+
+	return r
+}
+
 func main() {
 
 	//creating a new router
@@ -28,6 +44,10 @@ func main() {
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello World!"))
 	})
+
+	// sub routing
+
+	router.Mount("/books", BookRoutes())
 
 	//listening server at 3000 port
 
