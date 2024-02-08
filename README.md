@@ -92,6 +92,9 @@ The middleware stack for any Mux will execute before searching for a matching ro
 for example::: To use any middleware  ```router.Use(middleware.Logger)```
 
 # References
+
 ```https://go-chi.io```
+
 ```https://pkg.go.dev/github.com/go-chi/chi/v5```
+
 ```https://pkg.go.dev/github.com/go-chi/chi/v5/middleware```
